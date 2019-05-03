@@ -9,8 +9,8 @@ from SVM import SVMModel
 from NaiveBayes import NBModel 
 import sys
 sys.path.append("../")
-from preprocessing_scripts.readdata import read_csv
-from preprocessing_scripts.process_data import process_df
+from preprocessing.readdata import read_csv
+from preprocessing.process_data import process_df
 
 def main_p():
     print("Running ......")
