@@ -16,6 +16,7 @@ def main_p():
     X,y = read_csv.read_data()
     print("Run The Model and Predict")
     RandomForest.run_RF(X, y, 0.2)
+    SVMModel.run_SVM(X,y,0.2)
     return
 
 if __name__ == '__main__':

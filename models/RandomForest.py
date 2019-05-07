@@ -1,5 +1,7 @@
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report,accuracy_score
+from sklearn.model_selection import cross_val_score
+from sklearn import metrics
 
 class RandomForest:
     def run_RF(X,y,split):
@@ -13,4 +15,7 @@ class RandomForest:
         print("Classification Report")
         print(classification_report(y_test,y_pred))
         print("Accuracy score for Random Forest:",accuracy_score(y_test,y_pred))
+        scores = cross_val_score(clf_rf, X_train, y_train, cv=10)
+        print("Calculating the cross validated score for the classifier")
+        print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
         return
